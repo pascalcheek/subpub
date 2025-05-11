@@ -13,7 +13,7 @@ import (
 
 func TestIntegration(t *testing.T) {
 	go main()
-	time.Sleep(500 * time.Millisecond) // Ждем запуска
+	time.Sleep(500 * time.Millisecond)
 
 	conn, err := grpc.Dial(
 		"localhost:50051",
