@@ -119,6 +119,8 @@ func main() {
     server.Serve(lis)
 }
 ```
+## Best Practices
+Graceful Shutdown, Dependency Injection
 
 ## 🚀 Быстрый старт
 
