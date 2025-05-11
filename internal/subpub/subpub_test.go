@@ -12,7 +12,6 @@ import (
 func TestPubSub(t *testing.T) {
 	bus := New()
 
-	// Тест подписки и публикации
 	t.Run("basic pubsub", func(t *testing.T) {
 		var wg sync.WaitGroup
 		wg.Add(1)
@@ -30,7 +29,6 @@ func TestPubSub(t *testing.T) {
 		sub.Unsubscribe()
 	})
 
-	// Тест отписки
 	t.Run("unsubscribe", func(t *testing.T) {
 		called := false
 		sub, _ := bus.Subscribe("test", func(msg interface{}) {
@@ -43,7 +41,6 @@ func TestPubSub(t *testing.T) {
 		assert.False(t, called)
 	})
 
-	// Тест graceful shutdown
 	t.Run("shutdown", func(t *testing.T) {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Millisecond)
 		defer cancel()

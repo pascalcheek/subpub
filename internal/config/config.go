@@ -22,7 +22,6 @@ func getProjectRoot() string {
 }
 
 func Load() (*Config, error) {
-	// Путь относительно корня проекта
 	configPath := filepath.Join(getProjectRoot(), "configs", "config.yaml")
 
 	data, err := os.ReadFile(configPath)
